@@ -1,10 +1,5 @@
 function getUserChoice() {
 let userChoice = prompt('Input your choice: rock, paper or scissors.')
-if (userChoice != ('rock' || 'paper' || "scissors")) {
-    return userChoice;
-} else {
-  return userChoice.toLowerCase();
-}
 }
 
 console.log(getUserChoice());
@@ -38,18 +33,19 @@ function playRound(playerSelection, computerSelection) {
   }
   }
    
-  const playerSelection = getUserChoice();
-  const computerSelection = getComputerChoice();
+  
   console.log(playRound(playerSelection, computerSelection));
 
 
 function game(numRounds) {
 console.log(`Let's play ${numRounds} rounds.`)
 
-for (let rounds = 0; rounds <= numRounds; rounds ++) {
-  console.log(`Round ${numRounds}`);
-  playRound(playerSelection, computerSelection);
+for (let round = 0; round <= numRounds; round ++) {
+  const playerSelection = getUserChoice();
+  const computerSelection = getComputerChoice();
 
+  console.log(`Round ${numRounds}`);
+  console.log(playRound(playerSelection, computerSelection));
 }
 }
 
